@@ -199,7 +199,6 @@ apps=(
   android-file-transfer
   istat-menus
   utorrent
-  flux
   ngrok
   tomighty
   rescuetime
