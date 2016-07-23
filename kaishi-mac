@@ -65,10 +65,10 @@ export PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
 pretty_print "Installing git for control version"
   brew install git
 
-# Posgresql installation
+# Redis installation
 
-pretty_print "Installing postgresql for database management"
-  brew install postgresql --no-python
+pretty_print "Installing Redis..."
+  brew install redis
 
 # Vim installation
 
@@ -161,6 +161,9 @@ pretty_print "Installing NodeJs..."
 pretty_print "Installing Grunt..."
   npm install -g grunt-cli
 
+pretty_print "Installing Gulp..."
+  npm install -g gulp
+
 #Install brew cask
 pretty_print "Installing cask to install apps"
 	brew install caskroom/cask/brew-cask
@@ -173,8 +176,9 @@ pretty_print "Installing launchrocket to manage your homebrew formulas like a ch
 apps=(
   franz
   google-chrome
-  dropbox
+  cleanmymac
   appcleaner
+  cleanmymac
   firefox
   teamspeak-client
   evernote
@@ -186,10 +190,10 @@ apps=(
   mongochef
   iterm2
   macvim
-  sublime-text
   atom
   gitx
   testflight
+  android-studio
   vlc
   the-unarchiver
   android-file-transfer
@@ -197,9 +201,11 @@ apps=(
   utorrent
   flux
   ngrok
-  league-of-legends
   tomighty
   rescuetime
+  virtualbox
+  genymotion
+  league-of-legends
 )
 
 for app in "${apps[@]}"
