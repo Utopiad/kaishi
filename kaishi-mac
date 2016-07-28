@@ -191,8 +191,6 @@ apps=(
   iterm2
   macvim
   atom
-  gitx
-  testflight
   android-studio
   vlc
   the-unarchiver
