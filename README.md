@@ -21,11 +21,11 @@ Remember, with great power comes great responsibility!
 
 ### Mac OSX
 
-	bash <(curl -s https://raw.githubusercontent.com/IcaliaLabs/kaishi/master/kaishi-mac)
+	bash <(curl -s https://raw.githubusercontent.com/LouisLoode/kaishi/master/kaishi-mac)
 	
 ### Linux
 	
-	wget https://raw.githubusercontent.com/IcaliaLabs/kaishi/master/kaishi-linux -v -O kaishi.sh && bash kaishi.sh; rm -f kaishi.sh
+	wget https://raw.githubusercontent.com/LouisLoode/kaishi/master/kaishi-linux -v -O kaishi.sh && bash kaishi.sh; rm -f kaishi.sh
 	
 And that is it!
 
