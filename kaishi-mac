@@ -202,9 +202,6 @@ apps=(
   ngrok
   tomighty
   rescuetime
-  virtualbox
-  genymotion
-  league-of-legends
 )
 
 for app in "${apps[@]}"
