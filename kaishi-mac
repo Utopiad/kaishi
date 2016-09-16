@@ -79,6 +79,10 @@ pretty_print "Installing vim with Homebrew for latest version"
 
 pretty_print "Installing image magick for image processing"
   brew install imagemagick
+ 
+# Graphics magick installation
+pretty_print "Installing graphics magick for image processing"
+  brew install graphicsmagick
 
 # Rbenv installation
 pretty_print "Rbenv installation for managing your rubies"
