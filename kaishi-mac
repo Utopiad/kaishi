@@ -15,37 +15,42 @@ pretty_print "Here we go..."
 
 # So it begins
 
-# Oh my zsh installation
-
-pretty_print "Installing oh-my-zsh..."
-  curl -L http://install.ohmyz.sh | sh
-
-# zsh fix
-if [[ -f /etc/zshenv ]]; then
-  pretty_print "Fixing OSX zsh environment bug ..."
-    sudo mv /etc/{zshenv,zshrc}
-fi
-
 # Homebrew installation
 
 if ! command -v brew &>/dev/null; then
   pretty_print "Installing Homebrew, an OSX package manager, follow the instructions..."
     ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+  
+  # Git installation
 
+  pretty_print "Installing git for control version"
+    brew install git
+  
+  # Oh my zsh installation
+
+  pretty_print "Installing oh-my-zsh..."
+    curl -L http://install.ohmyz.sh | sh
+
+  # zsh fix
+  if [[ -f /etc/zshenv ]]; then
+    pretty_print "Fixing OSX zsh environment bug ..."
+      sudo mv /etc/{zshenv,zshrc}
+  fi
+  
   if ! grep -qs "recommended by brew doctor" ~/.zshrc; then
     pretty_print "Put Homebrew location earlier in PATH ..."
       printf '\n# recommended by brew doctor\n' >> ~/.zshrc
       printf 'export PATH="/usr/local/bin:$PATH"\n' >> ~/.zshrc
       export PATH="/usr/local/bin:$PATH"
   fi
+  pretty_print "Updating brew formulas"
+    brew update
+
 else
   pretty_print "You already have Homebrew installed...good job!"
 fi
 
 # Homebrew OSX libraries
-
-pretty_print "Updating brew formulas"
-  	brew update
 
 pretty_print "Installing GNU core utilities..."
 	brew install coreutils
@@ -60,10 +65,6 @@ pretty_print "Installing the most recent verions of some OSX tools"
 printf 'export PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"' >> ~/.zshrc
 export PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
 
-# Git installation
-
-pretty_print "Installing git for control version"
-  brew install git
 
 # Redis installation
 
